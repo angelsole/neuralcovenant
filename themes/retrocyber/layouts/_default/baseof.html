@@ -10,26 +10,28 @@
 </head>
 <body>
     <div class="cyber-grid"></div>
-    <div class="container">
-        <header>
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    <header class="sticky-header">
+        <div class="header-content">
             <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
             <p class="site-subtitle">{{ .Site.Params.subtitle }}</p>
-            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
-        </header>
-        
-        <nav>
-            <ul>
-                {{ range .Site.Menus.main }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                {{ end }}
-            </ul>
-        </nav>
-        
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+    
+    <div class="container">
         <main>
             {{ block "main" . }}{{ end }}
         </main>

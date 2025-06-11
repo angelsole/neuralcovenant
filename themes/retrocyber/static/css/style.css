@@ -123,6 +123,22 @@ header {
   overflow: hidden;
 }
 
+/* Sticky header */
+header.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-content {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+
 header::before {
   content: "◣";
   position: absolute;
@@ -350,115 +366,69 @@ nav a:hover {
 
 /* Mobile Menu Checkbox (hidden) */
 .menu-checkbox {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Mobile Menu Button */
 .menu-toggle {
   display: none;
-  background: none;
-  border: 1px solid var(--neon-green);
+  background: #000;
+  border: 2px solid var(--neon-green);
   color: var(--neon-green);
-  font-size: 1.5em;
-  padding: 8px 12px;
+  padding: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  z-index: 1000;
+  z-index: 10000;
+  width: 45px;
+  height: 45px;
+  border-radius: 4px;
+  box-shadow: 0 0 20px var(--neon-green);
 }
 
 .menu-toggle:hover {
   color: var(--neon-cyan);
   border-color: var(--neon-cyan);
   box-shadow: 0 0 10px var(--neon-cyan);
+  background: rgba(0, 255, 255, 0.1);
 }
 
 .menu-toggle span {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: currentColor;
-  margin: 5px 0;
+  background-color: var(--neon-green);
+  margin: 5px auto;
   transition: all 0.3s ease;
   position: relative;
+  box-shadow: 0 0 5px var(--neon-green);
 }
 
 /* Hamburger animation when checked */
-.menu-checkbox:checked + .menu-toggle span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
+.menu-checkbox:checked ~ header .menu-toggle span:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
 }
 
-.menu-checkbox:checked + .menu-toggle span:nth-child(2) {
+.menu-checkbox:checked ~ header .menu-toggle span:nth-child(2) {
   opacity: 0;
+  transform: scale(0);
 }
 
-.menu-checkbox:checked + .menu-toggle span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+.menu-checkbox:checked ~ header .menu-toggle span:nth-child(3) {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
 }
 
-/* Mobile Navigation Overlay */
-@media (max-width: 768px) {
-  header {
-    position: relative;
-  }
-  
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-  }
-  
-  nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    margin: 0;
-    padding: 80px 20px 20px;
-    transition: left 0.3s ease;
-    z-index: 999;
-    overflow-y: auto;
-    border: none;
-  }
-  
-  /* Show nav when checkbox is checked */
-  .menu-checkbox:checked ~ nav {
-    left: 0;
-  }
-  
-  nav ul {
-    flex-direction: column;
-    gap: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    width: 100%;
-    border-bottom: 1px solid var(--grid-color);
-  }
-  
-  nav a {
-    display: block;
-    padding: 20px;
-    font-size: 1.1em;
-    text-align: left;
-    border: none;
-  }
-  
-  nav a::before,
-  nav a::after {
-    opacity: 1;
-  }
-  
-  nav a:hover {
-    background-color: rgba(0, 255, 255, 0.2);
-    padding-left: 30px;
-  }
+/* Prevent scroll when menu is open */
+body:has(.menu-checkbox:checked) {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
+
 
 /* Main content */
 main {
@@ -1170,5 +1140,171 @@ footer::before {
   
   .post-preview {
     padding: 20px 15px;
+  }
+}
+
+/* MOBILE MENU FIX - COMPLETE OVERRIDE */
+@media screen and (max-width: 768px) {
+  /* Fix header */
+  header.sticky-header {
+    padding: 10px 0 !important;
+    height: auto !important;
+    min-height: 60px !important;
+  }
+  
+  .header-content {
+    padding: 5px 20px !important;
+    position: relative !important;
+    min-height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  header h1.site-title {
+    font-size: 1.3em !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+  }
+  
+  /* HAMBURGER MENU - FORCE VISIBILITY */
+  label.menu-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: absolute !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: #000 !important;
+    border: 2px solid var(--neon-green) !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    z-index: 9999 !important;
+    padding: 0 !important;
+    box-shadow: 0 0 15px var(--neon-green) !important;
+  }
+  
+  label.menu-toggle span {
+    display: block !important;
+    width: 24px !important;
+    height: 2px !important;
+    background: var(--neon-green) !important;
+    margin: 3px 0 !important;
+    transition: all 0.3s !important;
+  }
+  
+  /* NAV MENU - OFF SCREEN BY DEFAULT */
+  body > nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.98) !important;
+    z-index: 9998 !important;
+    transition: left 0.3s ease !important;
+    padding: 80px 20px 20px !important;
+    margin: 0 !important;
+    border: none !important;
+    border-right: 2px solid var(--neon-green) !important;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3) !important;
+  }
+  
+  /* SHOW NAV WHEN CHECKED */
+  body > .menu-checkbox:checked ~ nav {
+    left: 0 !important;
+  }
+  
+  /* Mobile nav list styling */
+  nav ul {
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  
+  nav li {
+    width: 100% !important;
+    border-bottom: 1px solid var(--grid-color) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  
+  nav li::before {
+    content: "▸" !important;
+    position: absolute !important;
+    left: 20px !important;
+    color: var(--neon-pink) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s !important;
+  }
+  
+  nav li:hover::before {
+    opacity: 1 !important;
+  }
+  
+  nav a {
+    display: block !important;
+    padding: 20px 20px 20px 40px !important;
+    font-size: 1.1em !important;
+    text-align: left !important;
+    border: none !important;
+    color: var(--terminal-green) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+  }
+  
+  nav a::before,
+  nav a::after {
+    opacity: 1 !important;
+  }
+  
+  nav a:hover {
+    background-color: rgba(0, 255, 255, 0.1) !important;
+    color: var(--neon-cyan) !important;
+    padding-left: 50px !important;
+    text-shadow: 0 0 10px var(--neon-cyan) !important;
+  }
+  
+  /* Add a scan line effect on hover */
+  nav li::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent) !important;
+    transition: left 0.5s !important;
+  }
+  
+  nav li:hover::after {
+    left: 100% !important;
+  }
+  
+  /* HAMBURGER TO X ANIMATION */
+  body > .menu-checkbox:checked ~ header label.menu-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px) !important;
+  }
+  
+  body > .menu-checkbox:checked ~ header label.menu-toggle span:nth-child(2) {
+    opacity: 0 !important;
+  }
+  
+  body > .menu-checkbox:checked ~ header label.menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px) !important;
+  }
+  
+  /* Hide decorations */
+  header::before,
+  header::after,
+  .site-subtitle {
+    display: none !important;
   }
 }
