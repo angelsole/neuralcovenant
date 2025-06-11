@@ -1,2 +1,7 @@
 <h1>{{ site.Title }}</h1>
+<button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
