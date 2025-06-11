@@ -2,7 +2,7 @@
 <article>
     {{ if .Params.image }}
     <div class="post-hero">
-        <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt | default .Title }}" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'image-placeholder\'>Image not found: {{ .Params.image }}</div>'">
+        <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt | default .Title }}" loading="lazy">
     </div>
     {{ end }}
     

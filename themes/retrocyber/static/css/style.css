@@ -455,6 +455,8 @@ article {
   box-shadow: 
     0 0 30px var(--neon-green),
     inset 0 0 30px rgba(0, 255, 0, 0.1);
+  position: relative;
+  z-index: 10;
 }
 
 .post-hero img {
@@ -464,6 +466,8 @@ article {
   filter: brightness(0.9) contrast(1.1);
   max-height: 400px;
   object-fit: cover;
+  position: relative;
+  z-index: 11;
 }
 
 .image-placeholder {
@@ -1382,7 +1386,7 @@ footer::before {
 }
 
 /* Inline post images */
-article img {
+article img:not(.post-hero img) {
   max-width: 100%;
   height: auto;
   display: block;

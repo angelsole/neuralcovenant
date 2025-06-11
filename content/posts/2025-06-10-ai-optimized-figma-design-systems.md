@@ -16,6 +16,7 @@ Last week, I watched an AI tool generate a perfectly responsive React component 
 After diving deep into this rabbit hole, experimenting with various tools, and yes, making plenty of mistakes, I've discovered that making your Figma design system AI-friendly requires rethinking almost everything. The good news? The payoff is massive—we're talking 60-80% reduction in design-to-code time. Let me show you how.
 
 ## The Three Pillars of AI-Optimized Design Systems
+![Three Pillars of AI Design Systems](/images/posts/2025-06-11-3pillars.webp)
 
 Through trial and error (and many late nights), I've found that successful AI integration stands on three essential pillars:
 
