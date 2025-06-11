@@ -64,24 +64,9 @@ body {
   background-size: 50px 50px;
 }
 
-/* Scanline effect with flicker */
+/* Scanline effect with flicker - DISABLED */
 body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 255, 0, 0.03),
-    rgba(0, 255, 0, 0.03) 1px,
-    transparent 1px,
-    transparent 2px
-  );
-  pointer-events: none;
-  z-index: 1;
-  animation: scanline 8s linear infinite;
+  display: none; /* Disabled scanline effect */
 }
 
 @keyframes scanline {
@@ -530,28 +515,9 @@ article::before {
   animation: blink 1s infinite;
 }
 
-/* Animated border gradient */
+/* Animated border gradient - DISABLED */
 article::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    var(--neon-cyan) 50%,
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-article:hover::after {
-  opacity: 0.1;
-  animation: border-scan 2s linear infinite;
+  display: none; /* Disabled scanning effect */
 }
 
 @keyframes border-scan {
