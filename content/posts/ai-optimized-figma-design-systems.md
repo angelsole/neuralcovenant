@@ -1,6 +1,6 @@
 ---
 title: "Creating AI-Optimized Figma Design Systems for Cursor AI, MCP, and Claude"
-date: 2025-06-11T10:00:00-08:00
+date: 2025-06-10T10:00:00-08:00
 draft: false
 tags: ["AI", "Design Systems", "Figma", "MCP", "Claude", "Cursor AI", "Development"]
 categories: ["Development", "Design"]
