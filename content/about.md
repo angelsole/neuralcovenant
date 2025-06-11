@@ -4,51 +4,58 @@ date: 2025-01-06
 draft: false
 ---
 
-## The Mission
-
-Neural Covenant represents the sacred intersection where ancient wisdom meets modern computation. This blog explores the divine architecture present in both scripture and software, seeking patterns that connect biblical truth with technological innovation.
-
 ## The Builder
 
-I'm Angel Sole, a software architect with over 14 years of experience crafting digital solutions. Currently serving as a Full Stack Engineer at Olyx, where we're pioneering sustainable technology in the biofuel brokerage space.
+I'm Angel Sole, a software architect and engineer with over 14 years of experience crafting digital solutions. Currently serving as a Full Stack Engineer at OLYX in Amsterdam, where I'm building sustainable technology solutions for the biofuel brokerage industry.
 
-My journey has taken me from CTO roles to hands-on engineering, always guided by the principle that good code, like faith, is built on solid foundations.
+My journey through technology has been driven by a deep fascination with how systems work, how they can be improved, and how they can serve humanity better. From my early days working with jQuery and Drupal to architecting serverless ecosystems and leading engineering teams, I've witnessed the incredible evolution of our digital landscape.
 
-### Technical Focus
-- Software Architecture & System Design
-- Large Language Models (LLMs) and AI Systems
-- Distributed Systems & Cloud Infrastructure
-- Clean Code & Sustainable Development Practices
+## Professional Journey
 
-### The Integration
+### Leadership & Architecture
+Most recently, I served as CTO at Shimoku (2024), where I led the company's transformation from a product-focused to a service-oriented model. Managing a team that grew from 4 to 9 engineers, I architected comprehensive serverless solutions using AWS CDK, implemented robust CI/CD pipelines, and drove strategic partnerships that increased average client engagement value by over 400%.
 
-As a Catholic and father, I believe technology is a tool for building God's kingdom on Earth. Every line of code is an opportunity to create order from chaos, to serve others, and to reflect the divine pattern of creation itself.
+### Technical Evolution
+My technical foundation spans the full stack:
+- **Frontend**: From jQuery to React, Redux to GraphQL, always focusing on performant, accessible interfaces
+- **Backend**: Node.js, NestJS, Express, with expertise in both serverless (Lambda, API Gateway) and containerized architectures
+- **Infrastructure**: AWS services (Amplify, CDK, Lambda), Docker, Terraform, and modern DevOps practices
+- **Data**: PostgreSQL, DynamoDB, OpenSearch, Redis - choosing the right tool for each use case
 
-This blog documents my discoveries at the intersection of:
-- **Biblical Wisdom**: Timeless principles from scripture
-- **Neural Networks**: Modern AI and machine learning
-- **Software Craftsmanship**: Building systems that endure
-- **Digital Ministry**: Using technology for greater purpose
+### Key Achievements
+- Implemented browser-based Python execution for SDK calls at Shimoku, revolutionizing user experience
+- Developed Shimoku Playground, a Streamlit competitor for local development
+- Transitioned teams from Kanban to Scrum, significantly improving delivery metrics
+- Built educational software at Vicens Vives Digital, combining React with Electron for desktop applications
 
-## The Covenant
+## The Mission
 
-The name "Neural Covenant" represents a commitment:
-- To build technology that serves humanity
-- To seek truth in both code and scripture
-- To share knowledge freely, as freely it was given
-- To approach innovation with humility and purpose
+Neural Covenant explores the intersection of technology and deeper meaning. This blog serves as a platform to share insights on:
 
-## Connect
+- **AI & Machine Learning**: Practical applications, architectural patterns, and the future of human-AI collaboration
+- **Software Architecture**: Building systems that scale, endure, and serve their purpose elegantly
+- **Technical Leadership**: Growing teams, aligning technology with business objectives, and fostering innovation
+- **Emerging Technologies**: Exploring new paradigms in computing and their practical applications
 
-While I share insights here, I'm also building tools that amplify voices across the digital landscape. My content aggregation project helps curate and share valuable insights from across the tech ecosystem.
+## Philosophy
 
-Feel free to reach out:
-- LinkedIn: [Your LinkedIn]
-- GitHub: [Your GitHub]
-- X/Twitter: [Your Twitter]
+I believe that technology should serve humanity, not the other way around. Every system we build, every line of code we write, should contribute to making the world more connected, more efficient, and more humane. Good architecture isn't just about technical excellence—it's about understanding the human context and building solutions that truly matter.
+
+## Current Focus
+
+- Exploring AI integration patterns with tools like Claude, Cursor AI, and MCP
+- Building sustainable, scalable systems in the renewable energy sector
+- Contributing to open-source projects that democratize technology
+- Writing about the practical challenges and solutions in modern software development
+
+## Let's Connect
+
+I'm always interested in discussing technology, architecture, and the future of software development.
+
+- LinkedIn: [Angel Sole](https://linkedin.com/in/angelsole)
+- GitHub: [@angelsole](https://github.com/angelsole)
+- Email: contact[at]neuralcovenant.com
 
 ---
 
-*"The fear of the Lord is the beginning of wisdom, and knowledge of the Holy One is understanding." - Proverbs 9:10*
-
-*"Code is poetry, but it's poetry with a purpose."*
+*"Code is poetry with a purpose—each function a verse, each system a symphony."*
