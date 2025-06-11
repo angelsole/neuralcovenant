@@ -1,0 +1,53 @@
+baseURL: https://neuralcovenant.com/
+languageCode: en-us
+title: Neural Covenant
+theme: retrocyber
+
+author:
+  name: Angel Sole
+  bio: Ex-CTO, Full Stack Engineer at Olyx. 14+ years crafting code. Building bridges between ancient wisdom and artificial intelligence.
+
+params:
+  description: Where biblical wisdom meets neural networks. Thoughts on software architecture, LLMs, and the digital exodus.
+  subtitle: "// Building tomorrow's architecture"
+  copyright: "© 2025 Angel Sole. Built with Hugo."
+  
+  # Performance settings
+  enableRobotsTXT: true
+  enableGitInfo: false
+  
+  # Social links
+  social:
+    linkedin: "" # Add your LinkedIn
+    twitter: "" # Add your X/Twitter
+    github: "" # Add your GitHub
+
+# Menu configuration
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Posts"
+      url: "/posts/"
+      weight: 2
+    - name: "About"
+      url: "/about/"
+      weight: 3
+    - name: "Archives"
+      url: "/archives/"
+      weight: 4
+
+# Permalinks
+permalinks:
+  posts: /:year/:month/:slug/
+
+# Disable unused features for performance
+disableHugoGeneratorInject: true
+
+# Content settings
+summaryLength: 30
+
+# Pagination
+pagination:
+  pagerSize: 10

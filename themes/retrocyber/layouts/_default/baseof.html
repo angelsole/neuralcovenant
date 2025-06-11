@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/animations.css" | relURL }}">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="container">
+        <header>
+            <h1 class="site-title">{{ .Site.Title }}</h1>
+            <p class="site-subtitle">{{ .Site.Params.subtitle }}</p>
+        </header>
+        
+        <nav>
+            <ul>
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </nav>
+        
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+        
+        <div class="ascii-cross">
+            ═══════════╪═══════════
+        </div>
+        
+        <footer>
+            <p>{{ .Site.Params.copyright }}</p>
+            <p class="build-info">
+                Last updated: {{ now.Format "2006-01-02 15:04:05 MST" }}
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

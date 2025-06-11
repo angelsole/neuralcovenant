@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="boot-sequence">
+    <h2 data-text="Welcome to the Neural Covenant" class="hologram">Welcome to the Neural Covenant</h2>
+    <blockquote class="data-stream">
+        "And God said, Let there be light: and there was light." - Genesis 1:3<br>
+        <span style="color: var(--terminal-green);" class="typing-cursor">console.log('Hello, World!');</span>
+    </blockquote>
+    
+    <p class="terminal-prompt">{{ .Site.Params.description }}</p>
+    
+    <h3 class="neon-flicker">Recent Transmissions</h3>
+    {{ $pages := where .Site.RegularPages "Type" "posts" }}
+    {{ range first 5 $pages }}
+    <div class="archive-post">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <span class="archive-date">{{ .Date.Format "2006-01-02" }}</span>
+    </div>
+    {{ end }}
+    
+    {{ if gt (len $pages) 5 }}
+    <p style="text-align: center; margin-top: 20px;">
+        <a href="/posts/">[View All Posts]</a>
+    </p>
+    {{ end }}
+</article>
+
+<article class="boot-sequence static-hover">
+    <h3 class="glitch-text" data-text="About the Author">About the Author</h3>
+    <p>{{ .Site.Author.bio }}</p>
+</article>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article>
+    <h1>{{ .Title }}</h1>
+    <p>All transmissions from the Neural Covenant, organized by year.</p>
+    
+    {{ $pages := where .Site.RegularPages "Type" "posts" }}
+    {{ range ($pages.GroupByDate "2006") }}
+    <h2 class="archive-year">{{ .Key }}</h2>
+    {{ range .Pages }}
+    <div class="archive-post">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <span class="archive-date">{{ .Date.Format "Jan 02" }}</span>
+    </div>
+    {{ end }}
+    {{ end }}
+</article>
+{{ end }}

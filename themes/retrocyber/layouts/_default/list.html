@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    
+    {{ range .Paginator.Pages }}
+    <div style="margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px dashed var(--grid-color);">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p class="post-meta">{{ .Date.Format "January 2, 2006" }} • {{ .ReadingTime }} min read</p>
+        <p>{{ .Summary }}</p>
+        <p><a href="{{ .Permalink }}">[Continue Reading →]</a></p>
+    </div>
+    {{ end }}
+    
+    {{ if gt .Paginator.TotalPages 1 }}
+    <div class="pagination">
+        {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}">← Previous</a>
+        {{ end }}
+        
+        <span class="active">Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
+        
+        {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}">Next →</a>
+        {{ end }}
+    </div>
+    {{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,252 @@
+/* Additional animations and effects */
+
+/* Typing effect for titles */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes typing-blink {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--terminal-green); }
+}
+
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--terminal-green);
+  animation: 
+    typing 3s steps(40, end),
+    typing-blink 0.75s step-end infinite;
+}
+
+/* Hologram effect */
+.hologram {
+  position: relative;
+  display: inline-block;
+}
+
+.hologram::before,
+.hologram::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.hologram::before {
+  animation: hologram-1 2s linear infinite;
+  color: var(--neon-cyan);
+  z-index: -1;
+}
+
+.hologram::after {
+  animation: hologram-2 2s linear infinite;
+  color: var(--neon-pink);
+  z-index: -2;
+}
+
+@keyframes hologram-1 {
+  0% { transform: translate(0); }
+  33% { transform: translate(-2px, -2px); }
+  66% { transform: translate(2px, 2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes hologram-2 {
+  0% { transform: translate(0); }
+  33% { transform: translate(2px, 2px); }
+  66% { transform: translate(-2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* Boot sequence animation */
+.boot-sequence {
+  opacity: 0;
+  animation: boot-up 1s ease-out forwards;
+}
+
+.boot-sequence:nth-child(1) { animation-delay: 0.1s; }
+.boot-sequence:nth-child(2) { animation-delay: 0.2s; }
+.boot-sequence:nth-child(3) { animation-delay: 0.3s; }
+.boot-sequence:nth-child(4) { animation-delay: 0.4s; }
+.boot-sequence:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes boot-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.5;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Cyber grid pulse */
+.cyber-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.1;
+  background-image: 
+    linear-gradient(var(--neon-cyan) 1px, transparent 1px),
+    linear-gradient(90deg, var(--neon-cyan) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: grid-pulse 4s ease-in-out infinite;
+}
+
+@keyframes grid-pulse {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+}
+
+/* Data stream effect */
+.data-stream {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-stream::before {
+  content: '01001110 01100101 01110101 01110010 01100001 01101100';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  white-space: nowrap;
+  color: var(--neon-green);
+  opacity: 0.3;
+  font-size: 0.8em;
+  animation: data-flow 10s linear infinite;
+}
+
+@keyframes data-flow {
+  to { transform: translateX(-200%); }
+}
+
+/* Neon flicker */
+.neon-flicker {
+  animation: neon-flicker 2s linear infinite;
+}
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor;
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+}
+
+/* Circuit board trace */
+.circuit-trace {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--neon-green), transparent);
+  animation: trace-flow 3s linear infinite;
+}
+
+@keyframes trace-flow {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Interference pattern */
+.interference {
+  position: relative;
+}
+
+.interference::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 0, 255, 0.03) 2px,
+    rgba(255, 0, 255, 0.03) 4px
+  );
+  animation: interference-scroll 0.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes interference-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* Terminal prompt animation */
+.terminal-prompt::before {
+  content: '> ';
+  color: var(--terminal-green);
+  font-weight: bold;
+}
+
+.terminal-prompt {
+  font-family: 'Courier New', monospace;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5px 10px;
+  border-left: 3px solid var(--terminal-green);
+  margin: 10px 0;
+}
+
+/* Glitch text distortion */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitch-anim-1 0.3s cubic-bezier(0.86, 0, 0.07, 1) infinite alternate-reverse;
+  color: var(--neon-pink);
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitch-anim-2 0.3s cubic-bezier(0.86, 0, 0.07, 1) infinite alternate-reverse;
+  color: var(--neon-cyan);
+  z-index: -2;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 30% 0); transform: translate(-2px, 2px); }
+  100% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(50% 0 20% 0); transform: translate(2px, 2px); }
+  100% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, -2px); }
+}

@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article>
+    <h1>{{ .Title }}</h1>
+    <p class="post-meta">
+        {{ .Date.Format "January 2, 2006" }} • {{ .ReadingTime }} min read
+        {{ if .Params.tags }}
+        • Tags: {{ range .Params.tags }}<a href="/tags/{{ . | urlize }}/">#{{ . }}</a> {{ end }}
+        {{ end }}
+    </p>
+    
+    {{ .Content }}
+    
+    <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid var(--neon-green);">
+        <p style="text-align: center;">
+            <a href="/posts/">← Back to all posts</a>
+        </p>
+    </div>
+</article>
+{{ end }}
