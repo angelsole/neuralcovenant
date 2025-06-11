@@ -131,6 +131,24 @@ header.sticky-header {
   width: 100%;
 }
 
+/* Desktop sticky header adjustments */
+@media screen and (min-width: 769px) {
+  header.sticky-header {
+    padding: 15px 30px;
+    transition: padding 0.3s ease;
+  }
+  
+  header.sticky-header h1.site-title {
+    font-size: 2em;
+    margin-bottom: 5px;
+    transition: font-size 0.3s ease;
+  }
+  
+  header.sticky-header .subtitle {
+    font-size: 0.9em;
+  }
+}
+
 .header-content {
   max-width: 1024px;
   margin: 0 auto;
