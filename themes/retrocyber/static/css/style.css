@@ -195,6 +195,33 @@ header::after {
   animation: glow 2s ease-in-out infinite alternate;
 }
 
+/* Header title link */
+header h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-cyan),
+    0 0 30px var(--neon-cyan);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+header h1 a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+header h1 a:hover {
+  text-shadow: 
+    0 0 20px var(--neon-cyan),
+    0 0 40px var(--neon-cyan),
+    0 0 60px var(--neon-cyan);
+}
+
 @keyframes glow {
   0% { 
     text-shadow: 
@@ -365,11 +392,16 @@ nav a:hover {
 
 /* Mobile Navigation Overlay */
 @media (max-width: 768px) {
+  header {
+    position: relative;
+  }
+  
   .menu-toggle {
     display: block;
     position: absolute;
-    top: 30px;
+    top: 50%;
     right: 20px;
+    transform: translateY(-50%);
   }
   
   nav {
@@ -761,6 +793,11 @@ footer::before {
   }
   
   .site-title {
+    font-size: 1.8em;
+    letter-spacing: 2px;
+  }
+  
+  header h1 {
     font-size: 1.8em;
     letter-spacing: 2px;
   }
