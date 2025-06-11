@@ -4,11 +4,20 @@
     {{ .Content }}
     
     {{ range .Paginator.Pages }}
-    <div style="margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px dashed var(--grid-color);">
-        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <p class="post-meta">{{ .Date.Format "January 2, 2006" }} • {{ .ReadingTime }} min read</p>
-        <p>{{ .Summary }}</p>
-        <p><a href="{{ .Permalink }}">[Continue Reading →]</a></p>
+    <div class="post-item" style="margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px dashed var(--grid-color);">
+        {{ if .Params.image }}
+        <div class="post-thumbnail">
+            <a href="{{ .Permalink }}">
+                <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt | default .Title }}" loading="lazy">
+            </a>
+        </div>
+        {{ end }}
+        <div class="post-content">
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p class="post-meta">{{ .Date.Format "January 2, 2006" }} • {{ .ReadingTime }} min read</p>
+            <p>{{ .Summary }}</p>
+            <p><a href="{{ .Permalink }}">[Continue Reading →]</a></p>
+        </div>
     </div>
     {{ end }}
     

@@ -123,29 +123,13 @@ header {
   overflow: hidden;
 }
 
-/* Sticky header */
-header.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-}
-
-/* Desktop sticky header adjustments */
-@media screen and (min-width: 769px) {
+/* Sticky header - mobile only */
+@media screen and (max-width: 768px) {
   header.sticky-header {
-    padding: 15px 30px;
-    transition: padding 0.3s ease;
-  }
-  
-  header.sticky-header h1.site-title {
-    font-size: 2em;
-    margin-bottom: 5px;
-    transition: font-size 0.3s ease;
-  }
-  
-  header.sticky-header .subtitle {
-    font-size: 0.9em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
   }
 }
 
@@ -480,6 +464,56 @@ article {
   filter: brightness(0.9) contrast(1.1);
   max-height: 400px;
   object-fit: cover;
+}
+
+.image-placeholder {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--warning-red);
+  background: rgba(255, 51, 51, 0.1);
+  border: 1px dashed var(--warning-red);
+  font-family: monospace;
+}
+
+/* Post list thumbnails */
+.post-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.post-thumbnail {
+  flex-shrink: 0;
+  width: 200px;
+  border: 1px solid var(--neon-green);
+  overflow: hidden;
+}
+
+.post-thumbnail img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.8) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.post-thumbnail:hover img {
+  filter: brightness(1) contrast(1.2);
+}
+
+.post-content {
+  flex: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .post-item {
+    flex-direction: column;
+  }
+  
+  .post-thumbnail {
+    width: 100%;
+  }
 }
 
 article::before {
@@ -1345,4 +1379,30 @@ footer::before {
   .site-subtitle {
     display: none !important;
   }
+}
+
+/* Inline post images */
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  border: 1px solid var(--neon-green);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+article figure {
+  margin: 40px 0;
+  text-align: center;
+}
+
+article figure img {
+  margin: 0 auto 15px;
+}
+
+article figcaption {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  font-style: italic;
+  padding: 0 20px;
 }
