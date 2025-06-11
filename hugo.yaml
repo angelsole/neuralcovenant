@@ -5,12 +5,12 @@ theme: retrocyber
 
 author:
   name: Angel Sole
-  bio: Ex-CTO, Full Stack Engineer at Olyx. 14+ years crafting code. Building bridges between ancient wisdom and artificial intelligence.
+  bio: Ex-CTO, Full Stack Engineer at Olyx. 14+ years crafting code. Building bridges between human intuition and artificial intelligence.
 
 params:
-  description: Where biblical wisdom meets neural networks. Thoughts on software architecture, LLMs, and the digital exodus.
+  description: Exploring the intersection of software architecture, LLMs, and the evolving digital landscape.
   subtitle: "// Building tomorrow's architecture"
-  copyright: "© 2025 Angel Sole. Built with Hugo."
+  copyright: "© 2025 Angel Sole."
   
   # Performance settings
   enableRobotsTXT: true

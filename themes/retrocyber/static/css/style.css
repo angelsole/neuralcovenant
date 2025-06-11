@@ -324,6 +324,7 @@ nav ul {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  margin: 0;
   padding: 0 10px;
 }
 
