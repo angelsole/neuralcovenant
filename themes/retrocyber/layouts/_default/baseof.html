@@ -12,8 +12,14 @@
     <div class="cyber-grid"></div>
     <div class="container">
         <header>
-            <h1 class="site-title">{{ .Site.Title }}</h1>
+            <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
             <p class="site-subtitle">{{ .Site.Params.subtitle }}</p>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
         </header>
         
         <nav>
