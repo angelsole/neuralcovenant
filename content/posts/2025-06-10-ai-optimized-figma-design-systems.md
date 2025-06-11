@@ -43,7 +43,7 @@ Each tier should maintain consistent patterns. Parent-child relationships need t
 One game-changer? Using Figma's variant system religiously. Instead of creating multiple similar components, use variants with logical property names. Not `Button1`, `Button2`, `Button3`, but `Button` with properties like `size: small/medium/large` and `state: default/hover/active`. This enables AI to understand relationships and generate appropriate conditional logic.
 
 ## Naming Conventions: Speaking AI's Language
-![Design Tokens](/images/posts/2025-06-11-template-components.webp)
+![Template Components Structure](/images/posts/2025-06-11-template-components.webp)
 
 Let's talk about something that seems trivial but isn't: naming. After countless experiments, I've learned that semantic naming beats descriptive naming every time when it comes to AI consumption.
 
