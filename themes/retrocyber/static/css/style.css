@@ -463,6 +463,25 @@ article {
   overflow: hidden;
 }
 
+/* Post hero image */
+.post-hero {
+  margin: -40px -40px 40px;
+  border-bottom: 2px solid var(--neon-green);
+  overflow: hidden;
+  box-shadow: 
+    0 0 30px var(--neon-green),
+    inset 0 0 30px rgba(0, 255, 0, 0.1);
+}
+
+.post-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.9) contrast(1.1);
+  max-height: 400px;
+  object-fit: cover;
+}
+
 article::before {
   content: "▸";
   position: absolute;

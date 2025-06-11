@@ -1,6 +1,8 @@
 ---
 title: "Creating AI-Optimized Figma Design Systems for Cursor AI, MCP, and Claude"
 date: 2025-06-10T10:00:00-08:00
+image: "/images/posts/2025-06-11-hero.webp"
+imageAlt: "A futuristic visualization of a design system flowing into code, with glowing cyan and magenta connections between Figma interface elements transforming into React components."
 draft: false
 tags: ["AI", "Design Systems", "Figma", "MCP", "Claude", "Cursor AI", "Development"]
 categories: ["Development", "Design"]

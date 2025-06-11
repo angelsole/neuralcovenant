@@ -1,5 +1,11 @@
 {{ define "main" }}
 <article>
+    {{ if .Params.image }}
+    <div class="post-hero">
+        <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt | default .Title }}" loading="lazy">
+    </div>
+    {{ end }}
+    
     <h1>{{ .Title }}</h1>
     <p class="post-meta">
         {{ .Date.Format "January 2, 2006" }} • {{ .ReadingTime }} min read
