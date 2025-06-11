@@ -43,6 +43,7 @@ Each tier should maintain consistent patterns. Parent-child relationships need t
 One game-changer? Using Figma's variant system religiously. Instead of creating multiple similar components, use variants with logical property names. Not `Button1`, `Button2`, `Button3`, but `Button` with properties like `size: small/medium/large` and `state: default/hover/active`. This enables AI to understand relationships and generate appropriate conditional logic.
 
 ## Naming Conventions: Speaking AI's Language
+![Design Tokens](/images/posts/2025-06-11-template-components.webp)
 
 Let's talk about something that seems trivial but isn't: naming. After countless experiments, I've learned that semantic naming beats descriptive naming every time when it comes to AI consumption.
 
@@ -80,6 +81,7 @@ Remember when converting designs to code meant hours of manual translation? Thos
 But here's a pro tip: for ultimate control, build custom solutions using the Figma Plugin API. You can create sophisticated code generation directly within Dev Mode, accessing the complete document tree and exporting exactly what you need.
 
 ## Design Tokens: The Secret Sauce
+![Design Tokens](/images/posts/2025-06-11-design-tokens.webp)
 
 If components are the ingredients, design tokens are the recipe. They bridge design decisions and code implementation in a way that both humans and AI can understand.
 
@@ -118,6 +120,7 @@ Here's a real example from my current setup:
 This structure enables AI to understand both the what and why of design decisions. Tools like Style Dictionary can transform these into platform-specific formats while maintaining semantic meaning.
 
 ## MCP: The Game-Changer You Need to Know About
+![MCP](/images/posts/2025-06-11-mcp.webp)
 
 Let me introduce you to something that's revolutionizing AI-design integration: MCP (Model Context Protocol). Think of it as "USB-C for AI applications"—a universal connection that solves the integration complexity between multiple AI tools and data sources.
 
