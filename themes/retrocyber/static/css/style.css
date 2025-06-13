@@ -449,7 +449,7 @@ article {
   height: auto;
   display: block;
   filter: brightness(0.9) contrast(1.1);
-  max-height: 400px;
+  max-height: 500px;
   object-fit: cover;
   position: relative;
   z-index: 11;

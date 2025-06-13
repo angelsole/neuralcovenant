@@ -1,0 +1,45 @@
+/* Enhanced image styling for different aspect ratios */
+
+/* Cinematic 16:9 images */
+article figure.cinematic img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  max-height: 450px;
+}
+
+/* Ultra-wide 21:9 images */
+article figure.ultrawide img {
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  max-height: 350px;
+}
+
+/* Smaller centered square images */
+article figure.square-small img {
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Add scanline effect on hover for that CRT feel */
+article figure img:hover {
+  filter: brightness(1.1) contrast(1.2);
+  animation: scanline-flicker 0.1s infinite;
+}
+
+@keyframes scanline-flicker {
+  0% { filter: brightness(1.1) contrast(1.2); }
+  50% { filter: brightness(1.05) contrast(1.15); }
+  100% { filter: brightness(1.1) contrast(1.2); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  article figure.cinematic img,
+  article figure.ultrawide img {
+    max-height: 250px;
+  }
+  
+  article figure.square-small img {
+    max-width: 100%;
+  }
+}

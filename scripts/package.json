@@ -1,0 +1,19 @@
+{
+  "name": "blog-image-optimizer",
+  "version": "1.0.0",
+  "description": "Image optimization pipeline for Neural Covenant blog",
+  "main": "optimize-images.js",
+  "scripts": {
+    "optimize": "node optimize-images.js",
+    "optimize:watch": "node optimize-images.js --watch",
+    "image:new": "node optimize-images.js && git add static/images/*",
+    "crop": "node crop-to-ratio.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.2",
+    "glob": "^8.1.0"
+  },
+  "devDependencies": {
+    "chokidar": "^3.6.0"
+  }
+}

@@ -1,0 +1,36 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $class := .Get "class" | default "" -}}
+{{- $loading := .Get "loading" | default "lazy" -}}
+{{- $caption := .Get "caption" -}}
+{{- $aspect := .Get "aspect" | default "" -}}
+
+<figure class="post-image{{ with $aspect }} {{ . }}{{ end }}{{ with $class }} {{ . }}{{ end }}">
+  <picture>
+    <!-- AVIF format (best compression) -->
+    <source 
+      srcset="/images/posts/{{ $src }}-inline.avif" 
+      type="image/avif" 
+      media="(max-width: 800px)">
+    <source 
+      srcset="/images/posts/{{ $src }}.avif" 
+      type="image/avif">
+    
+    <!-- WebP format (good compression, wider support) -->
+    <source 
+      srcset="/images/posts/{{ $src }}-inline.webp" 
+      type="image/webp" 
+      media="(max-width: 800px)">
+    <source 
+      srcset="/images/posts/{{ $src }}.webp" 
+      type="image/webp">
+    
+    <!-- PNG fallback -->
+    <img 
+      src="/images/posts/{{ $src }}.png" 
+      alt="{{ $alt }}" 
+      loading="{{ $loading }}"
+      {{ with $class }}class="{{ . }}"{{ end }}>
+  </picture>
+  {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
