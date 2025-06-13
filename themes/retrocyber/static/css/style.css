@@ -449,8 +449,10 @@ article {
   height: auto;
   display: block;
   filter: brightness(0.9) contrast(1.1);
-  max-height: 500px;
-  object-fit: cover;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: center;
+  background: var(--dark-bg);
   position: relative;
   z-index: 11;
 }
