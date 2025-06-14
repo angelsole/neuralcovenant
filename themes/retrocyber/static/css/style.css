@@ -730,16 +730,6 @@ blockquote {
   position: relative;
 }
 
-blockquote::before {
-  content: "✝";
-  position: absolute;
-  left: -15px;
-  top: 0;
-  font-size: 30px;
-  color: var(--holy-gold);
-  opacity: 0.3;
-}
-
 /* Footer */
 footer {
   margin-top: 50px;
